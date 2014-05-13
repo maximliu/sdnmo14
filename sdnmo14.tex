@@ -1,0 +1,87 @@
+
+\documentclass[a4paper,twocolumn,conference]{IEEEtran}
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+   \graphicspath{{fig/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{graphicx}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+
+% paper title
+
+\title{Best of Two Worlds: Reinforcing NaaS Capability with Software-defined Networking}
+
+
+\author{\IEEEauthorblockN{Feng Liu}
+	\IEEEauthorblockA{%Munich Network Management Team\\
+		Leibniz Supercomputing Centre (LRZ)\\
+		Garching b. M\"unchen, Germany}
+
+%\and
+
+%\IEEEauthorblockN{Hao Yu}
+%\IEEEauthorblockA{Department of Photonic Engineering\\
+%Technical University of Denmark Denmark\\
+%2800 Kongens Lyngby, Denmark}
+}
+
+\maketitle
+
+
+\begin{abstract}
+	\input{abstract}
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+	\input{introduction}
+
+\section{Background: NaaS}
+	\input{background}
+
+\section{Enhancing NaaS Service with SDN}
+	\input{naas-sdn}
+
+\section{Solution Architecture}
+	\input{architecture}
+
+\section{Implementation/Verification}
+	\input{impl}
+
+\section{Further Challenges and Future Work}
+	\input{future}
+
+\section{Conclusion}
+
+
+\section*{Acknowledgment}
+
+\bibliographystyle{IEEEtran}
+\bibliography{sdnmo14}
+
+\end{document}
