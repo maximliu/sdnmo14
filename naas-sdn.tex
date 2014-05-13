@@ -1,0 +1,121 @@
+\label{naas-sdn}
+
+Having the concpet and architecture of OpenNaaS presented, in this section we
+focuse on enhancements that highlight OpenNaaS serivce withSDN technology and
+corresponding functional requirements are derived from those enhancements. 
+
+\subsection{Enhancements}
+	
+	\subsubsection{Programmable Virtual/Physical Network Appliances}
+
+	The separation of control and data-forwarding mechanisms allows more flexible control
+	of packet-forwarding devices. Comparing to classical way of managing
+	network devices, behaviour of SDN-compatible devices can be programmed
+	through their north-bound interfaces on centralised management station. A
+	SDN switch, for example, can be easily programmed to behaviour not only
+	packet forwarding device, but also as a firewall or a load-balancer. The
+	instructions can be realized in just few lines of code. 
+
+	For OpenNaaS framework, a set of SDN-compatible devices can be programmed
+	into different network appliances \emph{according to usage scenarios}.  In
+	this way, programmable network can not only be reused but also aggregated
+	or split in an on-the-fly manner which provide flexibility from both user
+	and administrator perspective of views. Additionally middle-boxes could be
+	replaced by unified, programmable and multi-purposed devices, which
+	simplifies management and maintenance as well. 
+
+	
+	\subsubsection{Refined NaaS Control of Network Resources}
+
+	Management rules and policies can be explicitly stated and enforced using
+	proper programming or configuration languages, e.g. \cite{maple, frenetic}.
+	Rules can be inserted into device's flow table where forwarding mechanism
+	behaves accordingly, for example if data packets with certain origins have
+	to traverse through a pre-determined switches can be expressed as flow
+	rules.
+
+	In terms of OpenNaaS, a refined control of network resources can
+	dramatically reduce the overhead for administrator to configure networks
+	with complex user requirement. Policies can be singly used or even be
+	negotiated with user to adapt to their needs.
+
+	\subsubsection{Incorporating Advanced Analytics of Networks Behaviors}
+
+	SDN technology inherently facilitates in-network information gathering and
+	analysis in order to gain deeper insights of network behaviours and event
+	in real-time. Current OpenFlow specification~\cite{of14} for example,
+	allows asynchronous and symmetric messages to be sends from devices to
+	controller which contain network events such as \texttt{Packet-in/out},
+	\texttt{Port-status}, \texttt{Flow-Removed} etc. Given availability of such
+	types of messages provided by the resource layer devices, complex analytics
+	can be done in order to assist either human operators or automated
+	mechanisms to understand network behaviours and reacts to network event if necessary. 
+	Analytics can be done either at controller layers at integral part of network OS 
+	or controller can simply make those data available through its northbound interface 
+	for the above layer to conduct analysis. Note that depending on the scenario, deluge of 
+	data may be required to be processed in a real-time in order to achieve the goal, thus
+	analytics in network is also an across research area with big data.
+
+	
+	\subsubsection{Incorporating QoS into on-demand Network}
+
+	With support of configuration or programming languages, QoS requirements of
+	network services created by NaaS can be expressed explicitly as rules in
+	flow tables so that QoS policies are reflected and realized, for example
+	the control of bandwidth for NaaS virtual networks with different quality
+	and load-balancing requirements could be enforced using SDN rules expressed
+	in the form of functions \cite{pyretic} as in conventional programming
+	languages. 
+	
+
+	\subsubsection{Enabling Multi-domain SDN/OpenNaaS Service}
+	
+	Networking capabilities represented by both virtual and physical devices or
+	resource slices can be orchestrated to form complex networking services.
+	Since state-of-the-art SDN specification does not support inter-domain
+	networking, using other inter-domain capable resources allows SDN networks
+	in a single domain to forward their data packet to other domains, for
+	instance, if particular kind of traffic must be routed outside of its own
+	domain, an underlying SDN switches can be programmed with inter-domain
+	routing capabilities such as EGP or BGP, for example a SDN-based inter-domain
+	data exchange component at the edges of an organization can be a potential solution
+	to allow multi-domain NaaS service. 
+	
+	\subsubsection{Allowing Continuum in the Network Management}
+
+	Continuum in the network management refers to implementation and refinement
+	of management policies or rules from high-level perspective to low-level
+	executable management actions. Due to lack of an unified method, providing
+	a consistent network management continuum is currently difficult, if at all
+	possible. For services such as NaaS, a flexible control has to be in place
+	in order to allow administrators to re-configure the network resources to
+	adapt to ever changing management policies. A set of executable actions
+	down to network interfaces level must be resulted to reflect the change of
+	policy changes. With SDN policy languages such as Pyretic~\cite{pyretic}, a
+	solid foundation could be built to express network management intentions
+	in terms of a unified programming scripts in a generic way, programming
+	language concepts such as functions and classes can be used to express the
+	management rules and policies.
+
+
+	\subsubsection{Intelligent Network Management with SDN}
+
+	As underlying technology for NaaS platform, SDN works as a flexible
+	intermediate layer between high-level services offered by NaaS and
+	low-level infrastructures, e.g. switching/routing hardwares.  In a highly
+	utilized NaaS environment, SDN devices may generate a large number of
+	events and messages from OpenFlow channels, for example, asynchronous and
+	symmetric messages sent back and forth between controller and data layers.
+	Those message carries important management information that reflects the
+	current behavior, such as changes, faults such as mis-configurations and
+	even security informations. Thus aggregation, correlation and in-depth
+	comprehension of such messages is of vital importance for understanding the
+	performance of network in a real-time manner. It is also a great assistant
+	for activities such as debugging of network failures or finding bottle neck
+	of networks.  Obviously this is not a trivial task, sheer mount of data and
+	complex inter-correlation of data require the processing algorithms to be
+	capable of dealing with such data deluge in a highly efficient manner.
+	Methods available to data-mining and machine learning researches can be
+	explored for this purpose.
+	
+\subsection{Requirements}

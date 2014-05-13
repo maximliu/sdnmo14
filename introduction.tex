@@ -1,0 +1,64 @@
+\label{introduction}
+
+Flexible network infrastructures are crucial part for today's IT landscape.
+Advance in hardware technologies constantly improves performance of
+networking devices to suite the needs of applications and accommodate
+simultaneous traffic flows. On the other hand, usage scenarios of today's
+network infrastructures are very dynamic,ranging from networking for cloud
+computing and Network Functions Virtualization (NFV) to deal with short-lived
+network traffic spikes such as flash-crowd effect, providers should react agilely to
+frequently changing user requirement on networks. This requires more flexibilities
+in configuration as well as provisioning of resources in a very short time due
+to limited reaction time. 
+
+Considering those two aspects, an ultimate challenge currently faced by network
+service providers today is thus how to deliver dynamic network infrastructures
+at relatively low costs and in a timely manner. Furthermore network element should be 
+application-aware as well, which means requirements from high level applications should 
+be considered and reflected in the underlying network infrastructure.
+%Such flexible and on-demand
+%infrastructures are also required to address individual needs depend on usage
+%scenario set by users and their specific applications. 
+Obviously traditional network paradigm which purely based on dedicated
+networking hardware is not efficient to address this challenge due to
+its lacking of flexibility and reconfigurability. Recently a paradigm called
+Network-as-a-Service (NaaS)~\cite{naas} which based on network virtualization
+technology, shreds lights on this problem. With a layer of software entity,
+NaaS paradigm allows creation of virtualized switches, routers and optical
+devices ect. using physical devices, thus enables multiple tenants to use a
+slice of shared resources according to their specific needs. NaaS can be
+seamlessly integrated into other virtual services such as cloud computing and
+NFV. NaaS allows more control of network elements from users' perspective of
+view. Despite its conceptual advantages, it is still an unsolved question that
+how to efficiently control physical network resources in a fine-granulate and precise 
+way. 
+%
+%In order to allow National Research and Education Networks (NREN) and other 
+%e-Infrastructure providers across Europe to collaborate and support research communities
+%with highly flexible network infrastructures, a framework based on the paradigm of 
+%NaaS is created by FP7 Mantychore project. The framework is called OpenNaaS~\cite{opennaas}.
+%
+
+A recent effort towards programmable networks with Software-defined networking
+(SDN) has attract vast research interests. The idea of separation of data
+forwarding and control plane of networking devices can improve controllability
+and manageability of networks drastically. If properly integrated, we believe
+such flexibility can extent the management and usage of NaaS thus provides as a
+plausible solution for sustain the network controls of physical network
+devices.  In this paper, we analyze the advantages of integration of SDN into
+NaaS paradigm and how such integration can be properly designed and
+implemented. The main contribution of this work are:
+
+\begin{itemize}
+	\item Proposing an architecture which integrates SDN into NaaS;
+	\item Sustaining and enhancing functionalities of NaaS with refined network controls;
+	\item Convergence of network infrastructures with cloud computing and NFV.
+\end{itemize}
+
+This paper is organised as followings: Section \ref{background}
+provides briefly background information regarding NaaS and its use cases;
+in Section \ref{naas-sdn} we discuss in-depth on enhancements of OpenNaaS with
+support of SDN technology and in the meanwhile provides detailed design of
+integration; Section \ref{architecture} and  Section \ref{impl} both detailed
+discussion on architecture and a prototypical simulation result is presented;
+this paper is concluded by discussion on future works. 
